@@ -1,0 +1,108 @@
+Switch#enable
+Switch#confit t
+              ^
+% Invalid input detected at '^' marker.
+	
+Switch#cnofig t
+              ^
+% Invalid input detected at '^' marker.
+	
+Switch#config terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#vlan 10
+Switch(config-vlan)#name Sales 
+Switch(config-vlan)#exit
+Switch(config)#vlan 20
+Switch(config-vlan)#Account
+                    ^
+% Invalid input detected at '^' marker.
+	
+Switch(config-vlan)#name Account
+Switch(config-vlan)#exit
+Switch(config)#vlan 30
+Switch(config-vlan)#name IT
+Switch(config-vlan)#exit
+Switch(config)#
+Switch(config)#interface FastEthernet0/1
+Switch(config-if)#
+Switch(config-if)#exit
+Switch(config)#interface FastEthernet0/2
+Switch(config-if)#
+Switch(config-if)#exit
+Switch(config)#interface FastEthernet0/2
+Switch(config-if)#
+Switch(config-if)#exit
+Switch(config)#interface FastEthernet0/4
+Switch(config-if)#
+Switch(config-if)#exit
+Switch(config)#interface FastEthernet0/5
+Switch(config-if)#show vlan
+                    ^
+% Invalid input detected at '^' marker.
+	
+Switch(config-if)#exit
+Switch(config)#show vlan
+                ^
+% Invalid input detected at '^' marker.
+	
+Switch(config)#exit
+Switch#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Switch#show vlan
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Fa0/1, Fa0/2, Fa0/3, Fa0/4
+                                                Fa0/5, Fa0/6, Fa0/7, Fa0/8
+                                                Fa0/9, Fa0/10, Fa0/11, Fa0/12
+                                                Fa0/13, Fa0/14, Fa0/15, Fa0/16
+                                                Fa0/17, Fa0/18, Fa0/19, Fa0/20
+                                                Fa0/21, Fa0/22, Fa0/23, Fa0/24
+                                                Gig0/1, Gig0/2
+10   Sales                            active    
+20   Account                          active    
+30   IT                               active    
+1002 fddi-default                     active    
+1003 token-ring-default               active    
+1004 fddinet-default                  active    
+1005 trnet-default                    active    
+
+VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+1    enet  100001     1500  -      -      -        -    -        0      0
+10   enet  100010     1500  -      -      -        -    -        0      0
+
+Switch#omt fa0
+           ^
+% Invalid input detected at '^' marker.
+	
+Switch#int fa0
+           ^
+% Invalid input detected at '^' marker.
+	
+Switch#enble
+Translating "enble"...domain server (255.255.255.255)
+% Unknown command or computer name, or unable to find computer address
+
+Switch#config terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#interface range
+% Incomplete command.
+Switch(config)#interface tange fa0/6-fa0/10
+                         ^
+% Invalid input detected at '^' marker.
+	
+Switch(config)#interface range fa0/6-fa0/10
+Switch(config-if-range)#switchport access vlan 20
+Switch(config-if-range)#exit
+Switch(config)#interface range fa0/20-fa0/24
+Switch(config-if-range)#switchport access vlan 30
+Switch(config-if-range)#exit
+Switch(config)#interface range fa0/1-fa0/5
+Switch(config-if-range)#switchport access vlan 10
+Switch(config-if-range)#exit
+Switch(config)#exit
+Switch#
+%SYS-5-CONFIG_I: Configured from console by console
+show vlan
