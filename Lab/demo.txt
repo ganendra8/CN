@@ -146,3 +146,29 @@ FastEthernet0/1, changed state to up
 
 srm1(config)#exit
 
+
+Switch 0
+
+srm1(config)#interface fastethernet 0/24
+
+srm1(config-if)#switchport mode trunk
+
+srm1(config-if)#switchport trunk native vlan 1
+
+srm1(config-if)#exit
+
+srm1(config)#exit
+
+srm1#
+
+Switch 2
+
+srm1(config)#interface fastethernet 0/24
+
+srm1(config-if)#switchport mode trunk
+
+srm1(config-if)#switchport trunk native vlan 1
+
+srm1(config-if)#exit
+
+srm1(config)
