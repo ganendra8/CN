@@ -93,5 +93,56 @@ exit
 
 show vlan brief
 show ip interface brief
+srm1(config)#interface fastethernet 0/2
+srm1(config-if)#switchport mode access
+srm1(config-if)#switchport access vlan 10
+srm1(config-if)#interface fastethernet 0/3
+srm1(config-if)#switchport mode access
+srm1(config-if)#switchport access vlan 20
+srm1(config-if)#interface fastethernet 0/4
+srm1(config-if)#switchport mode access
+srm1(config-if)#switchport access vlan 30
+srm1(config-if)#exit
+srm1(config)#exit
+srm1#show vlan brief
 
+Switch 0
+
+srm1(config)#interface fastethernet 0/1
+
+srm1(config-if)#switchport mode trunk
+
+srm1(config-if)#switchport nonegotiate
+
+srm1(config-if)#exit
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface
+
+FastEthernet0/1, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface
+
+FastEthernet0/1, changed state to up
+
+srm1(config)#exit
+
+Switch 1
+
+srm1(config)#interface fastethernet 0/1
+
+srm1(config-if)#switchport mode trunk
+
+srm1(config-if)#switchport nonegotiate
+
+srm1(config-if)#exit
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface
+
+FastEthernet0/1, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface
+
+FastEthernet0/1, changed state to up
+
+srm1(config)#exit
 
